@@ -1,0 +1,43 @@
+<h1>{{ value }}</h1>
+<p>{{ value.2.title }}</p>
+
+{% for i in value %}
+<h1>{{ forloop.revcounter0 }} - {{ i.title }}</h1>
+<p>{{ i.contents|linebreaks|truncatewords:30 }}</p>
+<p>{{ i.contents|length }}
+<p>{{ i.contents|slice:":10" }}
+<p>{{ i.viewCount }}</p>
+{% if i.viewCount > 7 %}
+<p>뷰 수가 많습니다.</p>
+{% elif i.viewCount > 5 %}
+<p>콘텐츠가 반응을 보이고 있습니다.</p>
+{% else %}
+<p>콘텐츠 홍보를 더 해주세요.</p>
+{% endif %}
+{% endfor %}
+
+{% with value='hello world' %}
+<h1>{{ value }}</h1>
+{% endwith %}
+
+{# hello world #}
+{% comment %}
+<!-- comment는 범위안에 있는 모든것을 주석 처리 하는것  -->
+<p>hello world!!!!!!!!!!!</p>
+{% for i in value %}
+<h1>{{ forloop.revcounter0 }} - {{ i.title }}</h1>
+<p>{{ i.contents }}</p>
+<p>{{ i.viewCount }}</p>
+{% if i.viewCount > 7 %}
+<p>뷰 수가 많습니다.</p>
+{% elif i.viewCount > 5 %}
+<p>콘텐츠가 반응을 보이고 있습니다.</p>
+{% else %}
+<p>콘텐츠 홍보를 더 해주세요.</p>
+{% endif %}
+{% endfor %}
+{% endcomment %}
+
+{% lorem 3 p %}
+
+It is {% now "jS F Y H:i" %}

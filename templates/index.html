@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <img src="{% static 'jeju.jpg' %}" width='200px' alt="">
+    <form action="/" method="POST">
+    {% csrf_token %}
+        <input type="text" name="id"><br>
+        <input type="password" name="pw"><br>
+        <input type="submit" value="로그인">
+    </form>
+    <a href="https://djangomtv-ewtbf.run.goorm.io/testtest/">이동</a>
+{% endblock body %}

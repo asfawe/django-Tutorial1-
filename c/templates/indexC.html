@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello world C</h1>
+    {% for i in blog_list %}
+        <h1>{{ i.title }}</h1>
+        <p>{{ i.contents }}</p>
+    {% endfor %}
+</body>
+</html>
